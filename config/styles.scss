@@ -1,0 +1,196 @@
+$mono_1: hsl(220, 14%, 71%);
+$mono_2: hsl(220, 9%, 55%);
+$mono_3: hsl(220, 10%, 40%);
+$mono_4: hsl(220, 13%, 18%);
+$mono_5: hsl(220, 15%, 13%);
+
+
+$hue_1a: hsl(187, 47%, 55%);
+$hue_2a: hsl(207, 82%, 66%);
+$hue_3a: hsl(286, 60%, 67%);
+$hue_4a: hsl(95, 38%, 62%);
+$hue_4b: hsl(95, 38%, 50%);
+$hue_4c: #617958;
+$hue_5a: hsl(355, 65%, 65%);
+$hue_5b: hsl(5, 48%, 51%);
+$hue_6a: hsl(29, 54%, 61%);
+$hue_6b: hsl(39, 67%, 69%);
+
+$foreground: hsl(220, 14%, 71%);
+$background_1: hsl(220, 13%, 18%);
+$background_2: hsl(220, 15%, 13%);
+
+$gutter: hsl(220, 9%, 55%);
+$accent: hsl(220, 100%, 66%);
+
+// include everything from /fonts.css
+@import url("../public/fonts.css");
+
+html {
+    // center the content
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace, 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+
+    color: $foreground;
+    background-color: $background_1;
+
+    width: 50%;
+    min-width: 500px;
+
+    // if less than 500px, make it 100%
+    @media (max-width: 500px) {
+        width: 100%;
+        min-width: 250px;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+
+
+    div {
+        margin: 10px;
+    }
+
+    img {
+        background-color: $background_2;
+        border-radius: 15%;
+        max-width: 175px;
+        
+        margin: 0;
+        margin-right: 25px;
+
+
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;  
+
+        h1 {
+            margin: 0;
+
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            font-size: 2rem;
+            font-weight: 500;
+
+            em {
+                font-size: 1.25rem;
+                font-weight: 400;
+
+                color: $mono_2;
+            }
+        }
+
+
+        p {
+            margin: 0;
+
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+    }
+
+
+    // if less than 500px, make it column
+    @media (max-width: 500px) {
+        flex-direction: column;
+    }   
+
+
+}
+
+body {
+    margin: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+
+        a {
+            margin: 0;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            height: 10%;
+            min-height: 50px;
+
+            width: 55%;
+            min-width: 200px;
+            max-width: 300px;
+
+            border-radius: 10px;
+            border-width: 4;
+            border-style: solid;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }   
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+        font-size: 0.9rem;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+}
+
+a {
+    color: $hue_4a;
+    border-color: $hue_4a;
+
+    text-decoration: none;
+
+    &:hover {
+        color: $mono_2;
+        border-color: $mono_2;
+    }
+}
+
+i {
+    font-style: normal;
+    font-weight: 400;
+
+    margin-left: 5px;
+    margin-right: 5px;
+}

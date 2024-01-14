@@ -5,7 +5,7 @@ export interface LLIcon {
     /**
      * The Font Awesome icon hex code.
      */
-    icon: string;
+    code: string;
     
     /**
      * Determines whether the icon should use the FA-Solid style.
@@ -36,7 +36,7 @@ export interface LLLink {
     /**
      * The optional FA icon for the link.
      */
-    icon?: string;
+    icon?: LLIcon;
 }
 
 /**
@@ -47,6 +47,10 @@ export interface LLConfig {
      * The title of the page.
      */
     title : string;
+    /**
+     * optional secondary title of the page.
+     */
+    subtitle?: string;
     /**
      * The about section of the page.
      */
