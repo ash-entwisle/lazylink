@@ -34,6 +34,12 @@ export const Config: LLConfig = {
                 code: "f0ac",
                 bold: true
             }
-        }, 
+        }, {
+            name: "Hidden Link",
+            href: "https://youtu.be/dQw4w9WgXcQ",
+            desc: "This link is hidden!",
+            link: "ssssh",
+            hide: true
+        }
     ]
 }

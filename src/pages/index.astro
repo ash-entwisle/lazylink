@@ -49,9 +49,9 @@ const kw = Config.about.split(" ");
 		</header>
 		<main>
 			<div class="links">
-				{ Config.links.map((link) => {
-					return ( <Card link={link} /> );
-				}) }
+				{ // remove all hidden links, then map the rest to cards
+					Config.links.filter(link => !link.hide).map(link => <Card link={ link } />)
+				}
 			</div>
 		</main>
 		<footer>

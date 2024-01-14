@@ -37,6 +37,10 @@ export interface LLLink {
      * The optional FA icon for the link.
      */
     icon?: LLIcon;
+    /**
+     * Toggles whether the link should be displayed in the tree
+     */
+    hide?: boolean;
 }
 
 /**
