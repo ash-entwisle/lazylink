@@ -16,6 +16,24 @@ export const Config: LLConfig = {
                 code: "f09b",
                 bold: false
             }
-        }
+        }, {
+            name: "Fork me!",
+            href: "https:/github.com/ash-entwisle/lazylink/fork",
+            desc: "Fork me on GitHub to make your own!",
+            link: "fork",
+            icon: {
+                code: "e13b",
+                bold: true
+            }
+        }, {
+            name: "More From Me",
+            href: "https://ashentwisle.com",
+            desc: "Check out my other stuff!",
+            link: "website",
+            icon: {
+                code: "f0ac",
+                bold: true
+            }
+        }, 
     ]
 }
