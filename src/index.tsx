@@ -1,11 +1,24 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 import { readFileSync } from 'fs'
-import QRCode from 'qrcode' // Import the QRCode class from the qrcode package
 
+
+
+interface Link {
+  name: string,
+  desc: string,
+  url: string,
+}
+
+interface Config {
+  domain?: string,
+  urls: Link[],
+}
 
 const cfg_file = readFileSync('./config.json', 'utf8')
-const CONFIG = JSON.parse(JSON.stringify(cfg_file))
+const Env = JSON.parse(JSON.stringify(cfg_file)) as Config;
+
+console.log(Env)
 
 
 const app = new Hono()
@@ -35,23 +48,9 @@ const app = new Hono()
 \*---------------------------------------------*/
 
 
-interface Link {
-  name: string,
-  desc: string,
-  url:  string,
-}
-
-const links: Link[] = [
-  {
-    name: 'test',
-    desc: 'testing',
-    url:  'https://youtu.be/dQw4w9WgXcQ',
-  }
-];
-
 app.get('*', (c) => {
 
-  const link = links.find((link) => link.name === c.req.path.slice(1))
+  const link = Env.urls.find((link) => link.name === c.req.path.slice(1))
   const qr = c.req.queries().qr ? true : false;
 
   if (c.req.path === '/') { return c.render(<h1>Test</h1>) }
