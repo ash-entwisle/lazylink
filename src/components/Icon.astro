@@ -1,0 +1,12 @@
+---
+import type { LLIcon } from '../types';
+
+export interface Props {
+    icon: LLIcon;
+}
+
+const { icon } = Astro.props;
+const weight = icon.bold ? '900' : '400';
+---
+
+<i style={`font-weight: ${weight}`}>&#x{icon.code};</i>
