@@ -3,7 +3,6 @@ import type { LLConfig } from "../src/types";
 
 export const Config: LLConfig = {
     title: "LazyLink",
-    subtitle: "by Ash",
     about: "Linktree alternative for ppl who like to be lazy and use config files for everything",
     image: "/favicon.svg",
     links: [

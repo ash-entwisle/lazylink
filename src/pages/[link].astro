@@ -18,6 +18,9 @@ const link_data = Config.links.find((l: LLLink) => l.link === params.link);
 
 if (link_data) { return Astro.redirect(link_data.href); }
 else { return Astro.redirect("/"); }
+
+// TOOD: add qr code shit
+// TODO: fix metadata
 ---
 
 
