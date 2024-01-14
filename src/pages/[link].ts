@@ -1,5 +1,5 @@
 import { Config } from "../../config/config.ts";
-import type { APIRoute, APIContext } from "astro";
+import type { APIContext } from "astro";
 import type { LLLink } from "../types.ts";
 
 
