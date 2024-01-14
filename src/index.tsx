@@ -1,7 +1,7 @@
 import { Hono } from 'hono'
 import { renderer } from './renderer'
 import { readFileSync } from 'fs'
-
+import QRCode from 'qrcode' // Import the QRCode class from the qrcode package
 
 
 const cfg_file = readFileSync('./config.json', 'utf8')
@@ -55,7 +55,7 @@ app.get('*', (c) => {
   const qr = c.req.queries().qr ? true : false;
 
   if (c.req.path === '/') { return c.render(<h1>Test</h1>) }
-  else if (link) { return handler(c, link, qr) }               
+  else if (link) { return redir_handler(c, link, qr) }               
   else { return c.redirect('/') }
 
 });
@@ -68,14 +68,18 @@ app.get('*', (c) => {
  * @param link The link to be handled.
  * @param qr Whether to generate a QR code or not.
  */
-async function handler(c: any, link: Link, qr: boolean) {
+async function redir_handler(c: any, link: Link, qr: boolean) {
   const headers = {
     "og:title": link.name,
     "og:description": link.desc,
     "og:url": c.req.url,
+//    "og:image": c.req.url + "?qr",  // TODO : Generate QR code
   }
   if (!qr) { return c.redirect(link.url, 301, headers) }
-  else { return c.render(c.req.url) }
+  else { 
+    // TODO : Generate QR code
+    return c.redirect(link.url, 301, headers)
+  }
 }
 
 
