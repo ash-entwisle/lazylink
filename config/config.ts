@@ -17,7 +17,7 @@ export const Config: LLConfig = {
             }
         }, {
             name: "Fork me!",
-            href: "https:/github.com/ash-entwisle/lazylink/fork",
+            href: "https://github.com/new?template_name=lazylink&template_owner=ash-entwisle",
             desc: "Fork me on GitHub to make your own!",
             link: "fork",
             icon: {
