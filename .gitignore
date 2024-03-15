@@ -19,3 +19,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# ISsue with npm (gotta love it)
+package-lock.json
